@@ -141,7 +141,7 @@ void find(int key,char* record_file) {
 		ptr = fopen( record_file, "r+b" );
 		fseek( ptr, j, SEEK_SET );
 		fread( &size, sizeof(int), 1, ptr );
-		buffer = (char*)malloc(size);
+		buffer = (char*)malloc(size+1);
 		fread( buffer, 1, size, ptr );
 		printf("%s\n",buffer);
 		fclose(ptr);			
